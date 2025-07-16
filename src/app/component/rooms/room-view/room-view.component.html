@@ -1,0 +1,64 @@
+<div class="heading">
+  <h2 data-aos="fade-right" data-aos-duration="1500">
+    <span>{{ movie?.name }}</span> - Room View (Hall {{ movie?.hall }})
+  </h2>
+</div>
+
+<div class="seating-wrapper">
+  <div class="screen" data-aos="fade-left" data-aos-duration="1500">
+    <!-- <img *ngIf="movie?.url" [src]="movie?.url" [alt]="movie?.name" class="screen-img" /> -->
+    <div class="screen-label">{{ movie?.name }}</div>
+  </div>
+  <!-- <div class="seating">
+    <div class="row" *ngFor="let row of rows">
+      <span
+        class="seat"
+        *ngFor="let seat of seats"
+        [class.booked]="isBooked(row, seat)"
+        (click)="toggleSeat(row, seat)"
+      >
+        {{ row }}{{ seat }}
+      </span>
+    </div>
+  </div> -->
+  <div class="seating">
+    <div class="color-details" data-aos="fade-up" data-aos-duration="1500">
+      <div class="empty">
+        <div class="circle"></div>
+        <p>Available</p>
+      </div>
+      <div class="green">
+        <div class="circle"></div>
+        <p>Selected</p>
+      </div>
+      <div class="purple">
+        <div class="circle"></div>
+        <p>Booked</p>
+      </div>
+    </div>
+    <div data-aos="fade-up" data-aos-duration="1500">
+      <div class="row" *ngFor="let row of rows">
+        <span
+          class="seat"
+          *ngFor="let seat of seats"
+          [class.booked]="isBooked(row, seat)"
+          [class.selected]="isSelected(row, seat)"
+          [class.admin-can-unbook]="isadminlogin && isBooked(row, seat)"
+          [class.admin-can-unbook]="isauthorized && isBooked(row, seat)"
+          (click)="toggleSeat(row, seat)"
+        >
+          {{ row }}{{ seat }}
+        </span>
+      </div>
+    </div>
+  </div>
+  <div class="controls">
+    <button (click)="bookSeats()" [disabled]="selectedSeats.size === 0">
+      Book Seats
+    </button>
+    <button (click)="cancelSeats()" [disabled]="selectedSeats.size === 0">
+      Cancel
+    </button>
+    <button (click)="print()">Print Ticket</button>
+  </div>
+</div>

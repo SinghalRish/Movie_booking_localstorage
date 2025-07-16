@@ -1,0 +1,142 @@
+.movie-carousel {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  background: black;
+  padding: 20px 0;
+  border-top: 1px solid rgb(233, 200, 167);
+  border-bottom: 0.5px solid rgb(238, 213, 167);
+}
+
+.movie-track {
+  display: flex;
+  width: max-content;
+  animation: scroll-left 20s linear infinite;
+}
+
+.img {
+  flex: 0 0 auto;
+  margin: 0 20px;
+  cursor: pointer;
+}
+
+.img img {
+  height: 200px;
+  border-radius: 10px;
+  box-shadow: 4px 4px 8px rgba(189, 186, 186, 0.3);
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+h4 {
+  color: white;
+  text-align: center;
+  padding: 10px 0px;
+  margin-top: 15px;
+  /* border: 1px solid orange; */
+  box-shadow: 2px 2px 8px rgb(231, 199, 140);
+}
+
+.heading {
+  background-color: black;
+  text-align: center;
+  color: white;
+  padding: 20px 0px;
+  font-size: 1.5rem;
+
+  span {
+    color: orange;
+    font-size: 1.8rem;
+  }
+}
+
+.card-container {
+  min-height: 100vh;
+  display: flex;
+  gap: 46px;
+  flex-wrap: wrap;
+  padding-top: 30px;
+  padding: 1rem 2rem;
+  /* justify-content: space-between; */
+}
+
+.card {
+  height: 100%;
+  color: white;
+  box-shadow: 2px 2px 10px wheat;
+  padding: 20px;
+  cursor: pointer;
+
+  .name {
+    text-align: center;
+    font-size: 1.5rem;
+    color: orange;
+    border-bottom: 1px solid white;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+  }
+  .price,
+  .ratings,
+  .time,
+  .date {
+    display: flex;
+    justify-content: space-between;
+    span {
+      color: orange;
+    }
+  }
+  .details {
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  img {
+    height: 200px;
+    min-width: 180px;
+  }
+}
+
+.card-container {
+  background: url("/admindashboard.avif");
+  background-size: contain;
+}
+
+@media (max-width: 768px) {
+  .card-container {
+    justify-content: center;
+    padding: 0;
+    gap: 20px;
+  }
+
+  .card {
+    img {
+      height: 250px;
+      width: 230px;
+    }
+  }
+}
+
+@media (min-width: 1620px) {
+  .inner-wrapper {
+    max-width: 1620px;
+    margin: 0 auto;
+  }
+  .home-wrapper {
+    background: url("/admindashboard.avif");
+    background-size: contain;
+    min-height: 100vh;
+  }
+  .card-container
+{
+  background: transparent;
+  /* height: 10vh; */
+  min-height: auto;
+}}

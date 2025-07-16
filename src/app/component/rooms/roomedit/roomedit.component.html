@@ -1,0 +1,41 @@
+<div class="wrapper">
+  <div class="form">
+    <div class="heading"><h2>Edit Room Details</h2></div>
+    <form #roomForm="ngForm" (ngSubmit)="saveRoomConfig()">
+      <div class="field">
+        <label for="hallNumber">Hall Number</label>
+        <input
+          type="number"
+          id="hallNumber"
+          name="hallNumber"
+          [(ngModel)]="room.hallNumber"
+          placeholder="Hall Number"
+          required
+        />
+      </div>
+      <div class="field">
+        <label for="rows">No. of Rows</label>
+        <input
+          type="number"
+          id="rows"
+          name="rows"
+          [(ngModel)]="room.rows"
+          placeholder="No. of Rows"
+          required
+        />
+      </div>
+      <div class="field">
+        <label for="seatsPerRow">Seats Per Row</label>
+        <input
+          type="number"
+          id="seatsPerRow"
+          name="seatsPerRow"
+          [(ngModel)]="room.seatsPerRow"
+          placeholder="Seats Per Row"
+          required
+        />
+      </div>
+      <button type="submit" [disabled]="roomForm.invalid">Save</button>
+    </form>
+  </div>
+</div>

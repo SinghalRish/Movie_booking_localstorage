@@ -1,0 +1,31 @@
+<div class="wrapper">
+  <div *ngIf="ticket" class="ticket">
+    <h2>Booking Confirmation</h2>
+    <p>
+      <span><strong>Movie:</strong></span> {{ ticket.movieName }}
+    </p>
+    <p>
+      <span><strong>Hall No:</strong></span> {{ ticket.hallNo }}
+    </p>
+    <p>
+      <span><strong>Date:</strong></span> {{ ticket.date }}
+    </p>
+    <p>
+      <span><strong>Time:</strong></span> {{ ticket.time }}
+    </p>
+    <p>
+      <span><strong>Seats:</strong></span> {{ ticket.seats.join(", ") }}
+    </p>
+    <p>
+      <strong>Total Price:</strong> <span>₹{{ ticket.totalPrice }}</span>
+    </p>
+    <hr />
+    <p>
+      <span><strong>Booked By:</strong></span> {{ ticket.user.name }}
+    </p>
+    <p>
+      <span><strong>Email:</strong></span> {{ ticket.user.email }}
+    </p>
+    <button (click)="printTicket()">🖨️ Print Ticket</button>
+  </div>
+</div>

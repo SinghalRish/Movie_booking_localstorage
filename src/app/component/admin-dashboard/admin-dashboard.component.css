@@ -1,0 +1,264 @@
+.section1 {
+  width: 50%;
+  margin: 0px auto;
+  /* background: url("/section1_bg.jpg"); */
+
+  background-size: contain;
+}
+.section2 {
+  background-color: rgba(0, 0, 0);
+  min-height: 100vh;
+  width: 50%;
+  margin: 0px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dashboard-wrapper {
+  /* display: flex; */
+  /* background-color: black; */
+  color: white;
+}
+.heading {
+  width: 100%;
+  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid white;
+  h1 {
+    color: white;
+  }
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  /* width: 80%;
+  margin: 0px auto; */
+  gap: 20px;
+  padding-top: 15px;
+
+  label {
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: flex;
+    color: white;
+    align-items: center;
+  }
+
+  input {
+    padding: 10px 20px;
+    border-radius: 10px;
+    min-width: 210px;
+  }
+}
+
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.field {
+  display: flex;
+  justify-content: space-between;
+}
+
+.button {
+  width: 100%;
+
+  button {
+    cursor: pointer;
+    width: 100%;
+    font-weight: bolder;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    background: transparent;
+    background-color: orange;
+    /* border: 1px solid blueviolet; */
+  }
+}
+.button:hover {
+  background-color: black;
+}
+
+.card-container {
+  min-height: 100vh;
+  display: flex;
+  gap: 46px;
+  flex-wrap: wrap;
+  /* justify-content: space-between; */
+}
+
+.card,
+.card-overlay {
+  cursor: pointer;
+  height: 100%;
+  color: white;
+  box-shadow: 2px 2px 10px wheat;
+  padding: 20px;
+
+  .name {
+    text-align: center;
+    font-size: 1.5rem;
+    color: orange;
+    border-bottom: 1px solid white;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+  }
+  .price,
+  .ratings,
+  .time,
+  .date {
+    display: flex;
+    justify-content: space-between;
+    span {
+      color: orange;
+    }
+  }
+  .details {
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  img {
+    height: 200px;
+    min-width: 180px;
+  }
+}
+
+.dashboard-nav {
+  border-top: 1px solid rgba(0, 0, 0, 0.192);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 1rem 2rem;
+  background-color: black;
+}
+.addmovie {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  span {
+    font-size: 1.5rem;
+    font-weight: bolder;
+    color: orange;
+  }
+}
+.view {
+  cursor: pointer;
+}
+span {
+  color: white;
+}
+.wrapper2 {
+  background-color: black;
+  display: flex;
+}
+.wrapper3 {
+  background: url("/admindashboard.avif");
+  background-size: contain;
+  padding: 1rem 2rem;
+}
+.icons {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid white;
+  padding-top: 10px;
+  margin-top: 10px;
+  cursor: pointer;
+  a {
+    color: white;
+  }
+}
+.rooms {
+  cursor: pointer;
+}
+
+.rooms:hover {
+  color: orange;
+}
+.card-overlay {
+  z-index: 999;
+  border: 4px solid orange;
+
+  .name {
+    color: black;
+    text-decoration: line-through;
+  }
+
+  .icons {
+    color: orange;
+  }
+  a {
+    color: orange;
+  }
+}
+@media (max-width: 768px) {
+  .card-container {
+    justify-content: center;
+  }
+  .card {
+    img {
+      width: 250px;
+      height: 250px;
+    }
+  }
+  .wrapper2 {
+    justify-content: center;
+  }
+  .section1 {
+    width: 100%;
+    margin: 0px;
+    min-height: 50vh;
+  }
+  .section2 {
+    width: auto;
+    margin: 0px;
+  }
+  .form {
+    form {
+      width: auto;
+    }
+  }
+  .field {
+    label {
+      font-size: 1rem;
+    }
+    input {
+      min-width: 200px;
+      padding: 5px;
+    }
+  }
+}
+
+@media (min-width: 1620px) {
+  .inner-wrapper {
+    max-width: 1620px;
+    margin: 0px auto;
+  }
+  .dashboard-wrapper {
+    background: url("/admindashboard.avif");
+    background-size: contain;
+    min-height: 100vh;
+  }
+  .wrapper3 {
+    background: transparent;
+  }
+  .card-container {
+    min-height: auto;
+  }
+}
+
+.enabled {
+  background-color: black;
+  color: orange;
+  /* margin-bottom: 5px; */
+  text-align: center;
+}

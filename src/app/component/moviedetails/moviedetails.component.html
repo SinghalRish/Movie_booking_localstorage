@@ -1,0 +1,49 @@
+<div class="outter-details-wrapper">
+  <div class="details-wrapper">
+    <div class="details">
+      <div class="tittle">
+        <h1 data-aos="fade-right" data-aos-duration="1500">
+          {{ movie?.name }}
+        </h1>
+      </div>
+      <div class="info-wrapper">
+        <div class="info">
+          <div class="img" data-aos="fade-right" data-aos-duration="1500">
+            <img [src]="movie?.url" alt="{{ movie?.name }}" />
+          </div>
+          <div class="movie-info" data-aos="fade-up" data-aos-duration="1500">
+            <div class="description">
+              <p>{{ movie?.description }}</p>
+            </div>
+            <div class="rating">
+              <p><span>Rating:</span> {{ movie?.rating }}</p>
+            </div>
+
+            <div class="category">
+              <p><span>Category:</span> {{ movie?.category }}</p>
+            </div>
+
+            <div class="price">
+              <p>
+                <span>Ticket Price:</span> {{ movie?.ticketprice | currency }}
+              </p>
+            </div>
+            <div class="date-time">
+              <div class="date">
+                <p><span>Show Date:</span> {{ movie?.showdate | date }}</p>
+              </div>
+              <div class="time">
+                <p><span>Timing:</span> {{ movie?.showtime }}</p>
+              </div>
+            </div>
+            <div class="button">
+              <button class="btn btn-primary" (click)="onBookNow()">
+                Book Now
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

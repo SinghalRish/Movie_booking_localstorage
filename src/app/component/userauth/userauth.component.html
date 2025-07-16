@@ -1,0 +1,80 @@
+<div class="auth-wrapper">
+  <div class="form-container">
+    @if(!isuserlogin){
+    <div class="form">
+      <form #signupForm="ngForm" (ngSubmit)="onSignup(signupForm.value)">
+        <h1>Sign-up For User</h1>
+        <div class="field">
+          <label for="name">Name : </label>
+          <input
+            type="text"
+            placeholder="Enter Your Name"
+            name="name"
+            ngModel
+            required
+          />
+        </div>
+        <div class="field">
+          <label for="email">E-mail : </label>
+          <input
+            type="text"
+            placeholder="Enter Your Email"
+            name="email"
+            ngModel
+            required
+          />
+        </div>
+        <div class="field">
+          <label for="password">Password : </label>
+          <input
+            type="text"
+            placeholder="Enter your password"
+            name="password"
+            ngModel
+            required
+          />
+        </div>
+        <div class="button">
+          <button type="submit" [disabled]="signupForm.invalid">Submit</button>
+        </div>
+        <div class="login" (click)="toggle()">
+          <p>Already have an account ? Login Here</p>
+        </div>
+      </form>
+    </div>
+    } @else {
+    <div class="form">
+      <form #loginForm="ngForm" (ngSubmit)="onlogin(loginForm.value)">
+        <h1>Login For User</h1>
+
+        <div class="field">
+          <label for="email">E-mail : </label>
+          <input
+            type="text"
+            placeholder="Enter Your Email"
+            name="email"
+            ngModel
+            required
+          />
+        </div>
+        <div class="field">
+          <label for="password">Password : </label>
+          <input
+            type="text"
+            placeholder="Enter your password"
+            name="password"
+            ngModel
+            required
+          />
+        </div>
+        <div class="button">
+          <button type="submit" [disabled]="loginForm.invalid">Login</button>
+        </div>
+        <div class="login" (click)="toggle()">
+          <p>Don`t have an account?Sign-up Here</p>
+        </div>
+      </form>
+    </div>
+    }
+  </div>
+</div>

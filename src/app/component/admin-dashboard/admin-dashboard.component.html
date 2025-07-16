@@ -1,0 +1,172 @@
+<div class="dashboard-wrapper">
+  <div class="inner-wrapper">
+    <nav class="dashboard-nav">
+      <div class="addmovie" (click)="addmovie()">
+        <p>Add Movies</p>
+        <span *ngIf="!isadding">+</span>
+        <span *ngIf="isadding">
+          <fa-icon [icon]="cross" class="icon"></fa-icon>
+        </span>
+      </div>
+      <div class="rooms" (click)="gotorooms()">
+        <p>Manage Rooms here</p>
+      </div>
+    </nav>
+    <div class="wrapper2">
+      <div class="section1" *ngIf="isadding">
+        <div class="heading"><h1>Add New Movie Here</h1></div>
+        <div class="form">
+          <form #addform="ngForm" (ngSubmit)="onadd(addform.value)">
+            <div class="field">
+              <label for="name">Movie Name <span>:</span> </label>
+              <input
+                type="text"
+                placeholder="enter movie name "
+                ngModel
+                name="name"
+                required
+              />
+            </div>
+            <div class="field">
+              <label for="url">Banner url<span>:</span></label>
+              <input
+                type="text"
+                placeholder="enter movie url "
+                ngModel
+                name="url"
+                required
+              />
+            </div>
+            <div class="field">
+              <label for="category">Category<span>:</span> </label>
+              <input
+                type="text"
+                placeholder="enter movie category "
+                ngModel
+                name="category"
+                required
+              />
+            </div>
+            <div class="field">
+              <label for="rating">Rating<span>:</span> </label>
+              <input
+                type="text"
+                placeholder="enter movie rating "
+                ngModel
+                name="rating"
+                required
+              />
+            </div>
+            <div class="field">
+              <label for="ticketprice">Ticket Price<span>:</span> </label>
+              <input
+                type="text"
+                placeholder="enter ticket price "
+                ngModel
+                name="ticketprice"
+                required
+              />
+            </div>
+            <div class="field">
+              <label for="showdate">Date <span>:</span></label>
+              <input
+                type="date"
+                placeholder="enter Movie Date "
+                ngModel
+                name="showdate"
+                required
+              />
+            </div>
+            <div class="field">
+              <label for="showtime">Time<span>:</span> </label>
+              <input
+                type="time"
+                placeholder="enter Movie Time "
+                ngModel
+                name="showtime"
+                required
+              />
+            </div>
+            <div class="field">
+              <label for="hall">Hall Number<span>:</span> </label>
+              <input
+                type="number"
+                placeholder="enter Hall number"
+                ngModel
+                name="hall"
+                required
+              />
+            </div>
+            <div class="field">
+              <label for="description">Description<span>:</span> </label>
+              <input
+                type="text"
+                placeholder="Enter Description"
+                ngModel
+                name="description"
+                required
+              />
+            </div>
+            <div class="button">
+              <button type="submit" [disabled]="addform.invalid">
+                Add Movie
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="wrapper3">
+      <div class="card-container">
+        <div
+          [ngClass]="movie.enabled ? 'card' : 'card-overlay'"
+          *ngFor="let movie of MovieData"
+          data-aos="flip-left"
+          data-aos-duration="1500"
+        >
+          <div class="enabled" *ngIf="!movie.enabled">
+            <h4>Currently Disabled</h4>
+          </div>
+          <div class="banner" (click)="details(movie.id)">
+            <img src="{{ movie.url }}" alt="" />
+          </div>
+          <div class="name">{{ movie.name }}</div>
+          <div class="details">
+            <div class="left">
+              <div class="price">
+                <span>Price</span>{{ movie.ticketprice | currency }}
+              </div>
+              <div class="ratings"><span>Rating</span>{{ movie.rating }}</div>
+            </div>
+            <div class="right">
+              <div class="date"><span>Date</span>{{ movie.showdate }}</div>
+              <div class="time"><span>Time</span>{{ movie.showtime }}</div>
+            </div>
+          </div>
+          <div class="icons">
+            <a routerLink="/edit/{{ movie.id }}">
+              <fa-icon [icon]="edit" class="icon"></fa-icon
+            ></a>
+            <fa-icon
+              [icon]="eye"
+              class="icon"
+              *ngIf="movie.enabled"
+              (click)="toggleenable(movie.id)"
+            ></fa-icon>
+            <fa-icon
+              [icon]="eyeslash"
+              class="icon"
+              *ngIf="!movie.enabled"
+              (click)="toggleenable(movie.id)"
+            ></fa-icon>
+            <fa-icon
+              [icon]="trash"
+              class="icon"
+              (click)="delete(movie)"
+            ></fa-icon>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

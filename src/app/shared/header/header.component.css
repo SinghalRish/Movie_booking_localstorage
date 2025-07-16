@@ -1,0 +1,165 @@
+nav {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 1rem 2rem;
+  background-color: black;
+}
+.header-wrapper {
+  background-color: black;
+}
+a {
+  text-decoration: none;
+  /* color: black; */
+  cursor: pointer;
+}
+
+.role,
+.mob-role {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  a {
+    color: black;
+  }
+  .user,
+  .admin {
+    /* border: 0.5px solid rgba(255, 255, 0, 0.74); */
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: orange;
+    color: black;
+  }
+
+  .user:hover,
+  .admin:hover {
+    background-color: white;
+    /* border: 1px solid blue; */ 
+  }
+}
+.mob-role {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* gap: 10px; */
+}
+.greeting,
+.mob-greeting {
+  font-size: 1.5rem;
+  color: white;
+  span {
+    color: orange;
+  }
+}
+
+.mob-greeting {
+  text-align: center;
+  width: 100%;
+}
+.mob-heading {
+  width: 100%;
+  text-align: center;
+}
+.heading,
+.mob-heading {
+  font-size: 2rem;
+  border: 1px dashed black;
+  a {
+    color: white;
+  }
+  span {
+    color: orange;
+  }
+  /* border: 1px solid blue; */
+  border-radius: 10px;
+  padding: 1rem;
+}
+a.disabled {
+  pointer-events: none;
+  color: gray;
+  cursor: not-allowed;
+  text-decoration: none;
+}
+
+.add {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
+  p {
+    font-size: 1.2rem;
+    color: white;
+  }
+  span {
+    font-size: 1.5rem;
+    border-radius: 6px;
+    color: orange;
+    border: 1px solid white;
+    /* height: 30px;
+    width: 30px; */
+    padding: 3px 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bolder;
+    /* background-color: #babaf3; */
+    cursor: pointer;
+  }
+}
+button {
+  border: none;
+  background: none;
+}
+.mob-header-wrapper {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .mob-header-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    }
+  nav {
+    padding: 1rem 0rem;
+  }
+
+  .header-wrapper {
+    display: none;
+  }
+  .admin-role {
+    border: 1px solid rgba(255, 255, 255, 0.479);
+    padding: 5px;
+    .user,
+    .admin {
+      padding: 5px;
+    }
+  }
+  .mob-role {
+    padding: 1rem 0.5rem;
+    p {
+      font-size: 1rem;
+    }
+    a {
+      font-size: 1.2rem;
+    }
+    .add {
+      span {
+        font-size: 1.2rem;
+      }
+    }
+    /* .user{
+      font-size: 1rem;
+    } */
+  }
+}
+
+@media (min-width: 1620px) {
+  .inner-wrapper {
+    max-width: 1620px;
+    margin: 0px auto;
+  }
+}

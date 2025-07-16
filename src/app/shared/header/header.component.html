@@ -1,0 +1,207 @@
+<div class="header-wrapper">
+  <div
+    class="inner-wrapper"
+    data-aos="fade-down"
+    data-aos-easing="linear"
+    data-aos-duration="1000"
+  >
+    @if(isuserloggedin()){
+    <div class="header">
+      <nav>
+        <div class="greeting">
+          <p>
+            Welcome
+            <span
+              class="animate__animated animate__heartBeat animate__infinite animate__delay-2s"
+              style="display: inline-block"
+              >{{ name }}!</span
+            >
+          </p>
+        </div>
+        <div class="heading">
+          <p>
+            <a routerLink="">Movie<span> Dekho</span></a>
+          </p>
+        </div>
+        <div class="role">
+          <div class="user"><a (click)="logoutuser()">LOGOUT </a></div>
+          <div class="admin">
+            <a
+              routerLink="/adminauth"
+              [class.disabled]="isuserloggedin()"
+              [attr.aria-disabled]="isuserloggedin()"
+              [attr.tabindex]="isuserloggedin() ? -1 : null"
+              (click)="isuserloggedin() ? $event.preventDefault() : null"
+              >ADMIN-LOGIN</a
+            >
+          </div>
+        </div>
+      </nav>
+    </div>
+    } @else if(isadminloggedin()){
+    <div class="header">
+      <nav>
+        <div class="greeting">
+          <p>
+            Welcome
+            <span class="">{{ name }}!</span>
+          </p>
+        </div>
+        <div class="heading">
+          <p>
+            <a routerLink=""
+              >Movie<span
+                class="animate__animated animate__heartBeat animate__infinite animate__delay-2s"
+                style="display: inline-block"
+              >
+                Dekho</span
+              ></a
+            >
+          </p>
+        </div>
+
+        <div class="role">
+          <div class="add">
+            <p>Movies</p>
+            <a routerLink="/admindashboard"><span>+</span></a>
+          </div>
+          <div class="user">
+            <a
+              routerLink="/userauth"
+              [class.disabled]="isadminloggedin()"
+              [attr.aria-disabled]="isadminloggedin()"
+              [attr.tabindex]="isadminloggedin() ? -1 : null"
+              (click)="isadminloggedin() ? $event.preventDefault() : null"
+              >USER-LOGIN</a
+            >
+          </div>
+          <div class="admin"><a (click)="logoutadmin()">LOGOUT</a></div>
+        </div>
+      </nav>
+    </div>
+    } @else {
+    <div class="header">
+      <nav>
+        <div class="greeting">
+          <p>
+            Welcome
+            <span
+              class="animate__animated animate__heartBeat animate__infinite animate__delay-2s"
+              style="display: inline-block"
+              >GUEST!</span
+            >
+          </p>
+        </div>
+        <div class="heading">
+          <p>
+            <a routerLink="">Movie<span> Dekho</span></a>
+          </p>
+        </div>
+        <div class="role">
+          <div class="user"><a routerLink="/userauth">USER-LOGIN</a></div>
+          <div class="admin"><a routerLink="/adminauth">ADMIN-LOGIN</a></div>
+        </div>
+      </nav>
+    </div>
+    }
+  </div>
+</div>
+
+<div class="mob-header-wrapper">
+  @if(isuserloggedin()){
+  <div class="header">
+    <nav>
+      <div class="mob-greeting">
+        <p>
+          Welcome
+          <span
+            class="animate__animated animate__heartBeat animate__infinite animate__delay-2s"
+            style="display: inline-block"
+            >{{ name }}!</span
+          >
+        </p>
+      </div>
+      <div class="mob-heading">
+        <p>
+          <a routerLink="">Movie<span> Dekho</span></a>
+        </p>
+      </div>
+      <div class="mob-role">
+        <div class="user"><a (click)="logoutuser()">LOGOUT </a></div>
+        <div class="admin">
+          <a
+            routerLink="/adminauth"
+            [class.disabled]="isuserloggedin()"
+            [attr.aria-disabled]="isuserloggedin()"
+            [attr.tabindex]="isuserloggedin() ? -1 : null"
+            (click)="isuserloggedin() ? $event.preventDefault() : null"
+            >ADMIN-LOGIN</a
+          >
+        </div>
+      </div>
+    </nav>
+  </div>
+  } @else if(isadminloggedin()){
+  <div class="header">
+    <nav>
+      <div class="mob-greeting">
+        <p>
+          Welcome
+          <span
+            class="animate__animated animate__heartBeat animate__infinite animate__delay-2s"
+            style="display: inline-block"
+            >{{ name }}!</span
+          >
+        </p>
+      </div>
+      <div class="mob-heading">
+        <p>
+          <a routerLink="">Movie<span> Dekho</span></a>
+        </p>
+      </div>
+
+      <div class="mob-role admin-role">
+        <div class="add">
+          <p>Movies</p>
+          <a routerLink="/admindashboard"><span>+</span></a>
+        </div>
+        <div class="user">
+          <a
+            routerLink="/userauth"
+            [class.disabled]="isadminloggedin()"
+            [attr.aria-disabled]="isadminloggedin()"
+            [attr.tabindex]="isadminloggedin() ? -1 : null"
+            (click)="isadminloggedin() ? $event.preventDefault() : null"
+            >USER-LOGIN</a
+          >
+        </div>
+        <div class="admin"><a (click)="logoutadmin()">LOGOUT</a></div>
+      </div>
+    </nav>
+  </div>
+  } @else {
+  <div class="header">
+    <nav>
+      <div class="mob-greeting">
+        <p>
+          Welcome
+          <span
+            class="animate__animated animate__heartBeat animate__infinite animate__delay-2s"
+            style="display: inline-block"
+            >GUEST!</span
+          >
+        </p>
+      </div>
+      <div class="mob-heading">
+        <p>
+          <a routerLink="">Movie<span> Dekho</span></a>
+        </p>
+      </div>
+      <div class="mob-role">
+        <div class="user"><a routerLink="/userauth">USER-LOGIN</a></div>
+        <div class="admin"><a routerLink="/adminauth">ADMIN-LOGIN</a></div>
+      </div>
+    </nav>
+  </div>
+  }
+</div>

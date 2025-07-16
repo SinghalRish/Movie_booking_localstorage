@@ -1,0 +1,120 @@
+.section1 {
+  width: 50%;
+  margin: 0px auto;
+  min-height: 100vh;
+  /* background: url("/admindashboard_bg.jpg"); */
+}
+.wrapper {
+  background: url("/admindashboard.avif");
+  background-size: contain;
+}
+.heading {
+  width: 100%;
+  text-align: center;
+  padding-top: 30px;
+  border-bottom: 1px solid white;
+  h1 {
+    color: white;
+  }
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  /* width: 80%;
+  margin: 0px auto; */
+  gap: 20px;
+
+  label {
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: flex;
+    color: white;
+    align-items: center;
+    /* justify-content: space-between; */
+  }
+
+  input {
+    /* border: 1px solid blueviolet; */
+    padding: 10px 20px;
+    border-radius: 10px;
+    min-width: 210px;
+    /* color: orange; */
+    /* background: rgba(0, 0, 0, 0.753); */
+    /* border: 1px solid orange; */
+  }
+}
+
+.form {
+  /* min-height: 100vh; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.field {
+  display: flex;
+  justify-content: space-between;
+}
+
+.button {
+  width: 100%;
+
+  button {
+    cursor: pointer;
+    width: 100%;
+    font-weight: bolder;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    background: transparent;
+    background-color: orange;
+    border: 1px solid white;
+  }
+  button:hover {
+    background-color: black;
+  }
+}
+
+@media (max-width: 768px) {
+  .section1 {
+    width: 100%;
+    margin: 0px;
+    min-height: 50vh;
+  }
+  .section2 {
+    width: auto;
+    margin: 0px;
+  }
+  .form {
+    form {
+      width: auto;
+    }
+  }
+  .field {
+    label {
+      font-size: 1rem;
+    }
+    input {
+      min-width: 200px;
+      padding: 5px;
+    }
+  }
+}
+
+@media (min-width: 1620px) {
+  .outter-wrapper {
+    background: url("/admindashboard.avif");
+    background-size: contain;
+  }
+  .wrapper {
+    max-width: 1620px;
+    margin: 0px auto;
+    background: transparent;
+  }
+  .form {
+    min-height: 40vh;
+  }
+}

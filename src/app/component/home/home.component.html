@@ -1,0 +1,56 @@
+<div class="home-wrapper">
+  <div class="inner-wrapper">
+    <div class="heading">
+      <p>Our Current <span>Movies</span></p>
+    </div>
+    <div class="current-movies">
+      <div class="movie-carousel">
+        <div class="movie-track">
+          <div
+            class="img"
+            *ngFor="let movie of movieList"
+            (click)="onMovieClick(movie.id)"
+          >
+            <img [src]="movie.url" [alt]="movie.name" />
+            <h4>{{ movie.name }}</h4>
+          </div>
+          <div
+            class="img"
+            *ngFor="let movie of movieList"
+            (click)="onMovieClick(movie.id)"
+          >
+            <img [src]="movie.url" [alt]="movie.name" />
+            <h4>{{ movie.name }}</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="wrapper3">
+      <div class="card-container">
+        <div
+          class="card"
+          *ngFor="let movie of movieList"
+          (click)="onMovieClick(movie.id)"
+          data-aos="flip-left"
+          data-aos-duration="1500"
+          data-aos-anchor-placement="top-bottom"
+        >
+          <div class="banner"><img src="{{ movie.url }}" alt="" /></div>
+          <div class="name">{{ movie.name }}</div>
+          <div class="details">
+            <div class="left">
+              <div class="price">
+                <span>Price</span>{{ movie.ticketprice | currency }}
+              </div>
+              <div class="ratings"><span>Rating</span>{{ movie.rating }}</div>
+            </div>
+            <div class="right">
+              <div class="date"><span>Date</span>{{ movie.showdate }}</div>
+              <div class="time"><span>Time</span>{{ movie.showtime }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

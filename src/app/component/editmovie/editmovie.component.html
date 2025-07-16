@@ -1,0 +1,120 @@
+<div class="outter-wrapper">
+  <div class="wrapper">
+    <div class="section1">
+      <div class="heading"><h1>Edit Movie Here</h1></div>
+      <div class="form">
+        <form
+          *ngIf="movie"
+          #editform="ngForm"
+          (ngSubmit)="onedit(editform.value)"
+        >
+          <div class="field">
+            <label for="name">Movie Name <span>:</span> </label>
+            <input
+              type="text"
+              placeholder="enter movie name "
+              [(ngModel)]="movie.name"
+              name="name"
+              required
+            />
+          </div>
+          <div class="field">
+            <label for="url">Banner url<span>:</span></label>
+            <input
+              type="text"
+              placeholder="enter movie url "
+              [(ngModel)]="movie.url"
+              name="url"
+              required
+            />
+          </div>
+          <div class="field">
+            <label for="category">Category<span>:</span> </label>
+            <input
+              type="text"
+              placeholder="enter movie category "
+              [(ngModel)]="movie.category"
+              name="category"
+              required
+            />
+          </div>
+          <div class="field">
+            <label for="rating">Rating<span>:</span> </label>
+            <input
+              type="text"
+              placeholder="enter movie rating "
+              [(ngModel)]="movie.rating"
+              name="rating"
+              required
+            />
+          </div>
+          <div class="field">
+            <label for="ticketprice">Ticket Price<span>:</span> </label>
+            <input
+              type="text"
+              placeholder="enter ticket price "
+              [(ngModel)]="movie.ticketprice"
+              name="ticketprice"
+              required
+            />
+          </div>
+          <div class="field">
+            <label for="showdate">Date <span>:</span></label>
+            <input
+              type="date"
+              placeholder="enter Movie Date "
+              [(ngModel)]="movie.showdate"
+              name="showdate"
+              required
+            />
+          </div>
+          <div class="field">
+            <label for="showtime">Time<span>:</span> </label>
+            <input
+              type="time"
+              placeholder="enter Movie Time "
+              [(ngModel)]="movie.showtime"
+              name="showtime"
+              required
+            />
+          </div>
+          <div class="field">
+            <label for="hall">Hall Number<span>:</span> </label>
+            <input
+              type="number"
+              placeholder="enter Hall number"
+              [(ngModel)]="movie.hall"
+              name="hall"
+              required
+            />
+          </div>
+          <div class="field">
+            <label for="description">Description<span>:</span> </label>
+            <input
+              type="text"
+              placeholder="Enter Description"
+              [(ngModel)]="movie.description"
+              name="description"
+              required
+            />
+          </div>
+          <div class="field">
+            <label>Enabled<span>:</span> </label>
+            <input
+              type="text"
+              placeholder="is Movie enables"
+              [(ngModel)]="movie.enabled"
+              name="enabled"
+              required
+            />
+          </div>
+          <div class="button">
+            <button type="submit" [disabled]="editform.invalid">
+              Edit Movie
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

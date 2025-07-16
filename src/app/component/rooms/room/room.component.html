@@ -1,0 +1,58 @@
+<div class="room-wrapper">
+  <div class="room-inner-wrapper">
+    <div class="selection-wrapper">
+      <div class="room-selection">
+        <label data-aos="zoom-in-up" data-aos-duration="1500"
+          >Select Room (Hall) Number:</label
+        >
+        <select [(ngModel)]="selectedHall" (change)="onHallChange()">
+          <option [ngValue]="null">All-Movies</option>
+          <option *ngFor="let hall of hallNumbers" [ngValue]="hall">
+            {{ hall }}
+          </option>
+        </select>
+      </div>
+    </div>
+
+    <div class="movies-list" *ngIf="filteredMovies.length > 0">
+      <div class="heading">
+        <h3 data-aos="fade-right" data-aos-duration="1500">
+          Movies in Hall {{ selectedHall }}
+        </h3>
+        <button class="edit" (click)="goToRoomEdit()">
+          {{ selectedHall ? "Edit Room No. " + selectedHall : "Add New Room" }}
+        </button>
+      </div>
+
+      <div class="wrapper3">
+        <div class="card-container">
+          <div
+            class="card"
+            *ngFor="let movie of filteredMovies"
+            data-aos="flip-left"
+            data-aos-duration="1500"
+          >
+            <a [routerLink]="['/room-view', movie.id]">
+              <div class="banner"><img src="{{ movie.url }}" alt="" /></div>
+              <div class="name">{{ movie.name }}</div>
+              <div class="details">
+                <div class="left">
+                  <div class="price">
+                    <span>Price</span>{{ movie.ticketprice | currency }}
+                  </div>
+                  <div class="ratings">
+                    <span>Rating</span>{{ movie.rating }}
+                  </div>
+                </div>
+                <div class="right">
+                  <div class="date"><span>Date</span>{{ movie.showdate }}</div>
+                  <div class="time"><span>Time</span>{{ movie.showtime }}</div>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
